@@ -1,0 +1,129 @@
+﻿League,Goals Against,Team,GA Home,GA Away,GA First Half,GA Second Half,GA First 15 mins,GA Last 10 mins,GA Home Matches Scored In,GA Away Matches Scored In,GA Pld,GA Per Match,Season,KEY
+Premier League,27,Manchester City,14,13,12,15,3,4,8,10,38,0.71,2017/18,Premier League|Manchester City|2017/18
+Premier League,28,Manchester United,9,19,14,14,4,2,12,7,38,0.74,2017/18,Premier League|Manchester United|2017/18
+Premier League,36,Tottenham Hotspur,16,20,17,19,8,10,10,6,38,0.95,2017/18,Premier League|Tottenham Hotspur|2017/18
+Premier League,38,Chelsea,16,22,13,25,3,7,10,6,38,1,2017/18,Premier League|Chelsea|2017/18
+Premier League,38,Liverpool,10,28,17,21,6,9,12,5,38,1,2017/18,Premier League|Liverpool|2017/18
+Premier League,39,Burnley,17,22,12,27,4,8,7,5,38,1.03,2017/18,Premier League|Burnley|2017/18
+Premier League,47,Newcastle United,17,30,19,28,3,7,7,2,38,1.24,2017/18,Premier League|Newcastle United|2017/18
+Premier League,51,Arsenal,20,31,21,30,8,8,9,4,38,1.34,2017/18,Premier League|Arsenal|2017/18
+Premier League,54,Brighton & Hove Albion,25,29,24,30,8,9,5,5,38,1.42,2017/18,Premier League|Brighton & Hove Albion|2017/18
+Premier League,55,Crystal Palace,27,28,29,26,9,7,4,5,38,1.45,2017/18,Premier League|Crystal Palace|2017/18
+Premier League,56,West Bromwich Albion,29,27,20,36,3,11,6,4,38,1.47,2017/18,Premier League|West Bromwich Albion|2017/18
+Premier League,56,Swansea City,24,32,26,30,7,10,5,4,38,1.47,2017/18,Premier League|Swansea City|2017/18
+Premier League,56,Southampton,26,30,28,28,6,9,3,5,38,1.47,2017/18,Premier League|Southampton|2017/18
+Premier League,58,Everton,22,36,25,33,7,14,7,3,38,1.53,2017/18,Premier League|Everton|2017/18
+Premier League,58,Huddersfield Town,25,33,19,39,3,6,7,3,38,1.53,2017/18,Premier League|Huddersfield Town|2017/18
+Premier League,60,Leicester City,22,38,26,34,8,8,6,3,38,1.58,2017/18,Premier League|Leicester City|2017/18
+Premier League,61,AFC Bournemouth,30,31,25,36,7,11,3,3,38,1.61,2017/18,Premier League|AFC Bournemouth|2017/18
+Premier League,64,Watford,31,33,29,35,6,16,5,4,38,1.68,2017/18,Premier League|Watford|2017/18
+Premier League,68,West Ham United,26,42,26,42,8,13,7,3,38,1.79,2017/18,Premier League|West Ham United|2017/18
+Premier League,68,Stoke City,30,38,25,43,8,11,3,3,38,1.79,2017/18,Premier League|Stoke City|2017/18
+Bundesliga,28,Bayern Munich,15,13,15,13,5,2,8,8,34,0.82,2017/18,Bundesliga|Bayern Munich|2017/18
+Bundesliga,36,VfB Stuttgart,9,27,15,21,3,5,10,2,34,1.06,2017/18,Bundesliga|VfB Stuttgart|2017/18
+Bundesliga,37,FC Schalke 04,15,22,18,19,4,6,7,6,34,1.09,2017/18,Bundesliga|FC Schalke 04|2017/18
+Bundesliga,40,Werder Bremen,17,23,21,19,4,7,6,2,34,1.18,2017/18,Bundesliga|Werder Bremen|2017/18
+Bundesliga,44,Bayer Leverkusen,19,25,20,24,7,6,6,4,34,1.29,2017/18,Bundesliga|Bayer Leverkusen|2017/18
+Bundesliga,45,Eintracht Frankfurt,19,26,17,28,5,9,4,3,34,1.32,2017/18,Bundesliga|Eintracht Frankfurt|2017/18
+Bundesliga,46,FC Augsburg,24,22,23,23,5,10,5,4,34,1.35,2017/18,Bundesliga|FC Augsburg|2017/18
+Bundesliga,46,Hertha BSC,27,19,21,25,8,4,3,5,34,1.35,2017/18,Bundesliga|Hertha BSC|2017/18
+Bundesliga,47,Borussia Dortmund,21,26,22,25,7,6,7,5,34,1.38,2017/18,Bundesliga|Borussia Dortmund|2017/18
+Bundesliga,48,VfL Wolfsburg,25,23,23,25,3,6,2,6,34,1.41,2017/18,Bundesliga|VfL Wolfsburg|2017/18
+Bundesliga,48,TSG 1899 Hoffenheim,16,32,16,32,5,12,8,2,34,1.41,2017/18,Bundesliga|TSG 1899 Hoffenheim|2017/18
+Bundesliga,52,"Borussia M'gladbach",20,32,24,28,6,7,4,3,34,1.53,2017/18,"Bundesliga|Borussia M'gladbach|2017/18"
+Bundesliga,52,1. FSV Mainz 05,21,31,28,24,7,8,5,2,34,1.53,2017/18,Bundesliga|1. FSV Mainz 05|2017/18
+Bundesliga,53,RB Leipzig,26,27,25,28,8,5,3,3,34,1.56,2017/18,Bundesliga|RB Leipzig|2017/18
+Bundesliga,53,Hamburger SV,19,34,23,30,6,8,6,1,34,1.56,2017/18,Bundesliga|Hamburger SV|2017/18
+Bundesliga,54,Hannover 96,25,29,22,32,3,11,4,1,34,1.59,2017/18,Bundesliga|Hannover 96|2017/18
+Bundesliga,56,SC Freiburg,17,39,23,33,8,13,7,2,34,1.65,2017/18,Bundesliga|SC Freiburg|2017/18
+Bundesliga,70,1. FC Koln,30,40,26,44,7,11,3,2,34,2.06,2017/18,Bundesliga|1. FC Koln|2017/18
+La Liga,22,Atletico Madrid,8,14,6,16,-,10,13,10,38,0.58,2017/18,La Liga|Atletico Madrid|2017/18
+La Liga,29,Barcelona,11,18,13,16,4,2,10,9,38,0.76,2017/18,La Liga|Barcelona|2017/18
+La Liga,33,Getafe,13,20,12,21,5,7,9,5,38,0.87,2017/18,La Liga|Getafe|2017/18
+La Liga,38,Valencia,16,22,12,26,4,10,8,4,38,1,2017/18,La Liga|Valencia|2017/18
+La Liga,42,Espanyol,16,26,21,21,5,9,6,6,38,1.11,2017/18,La Liga|Espanyol|2017/18
+La Liga,44,Real Madrid,20,24,16,28,4,12,6,4,38,1.16,2017/18,La Liga|Real Madrid|2017/18
+La Liga,49,Athletic Bilbao,16,33,26,23,7,8,9,2,38,1.29,2017/18,La Liga|Athletic Bilbao|2017/18
+La Liga,50,Villarreal,22,28,19,31,4,15,6,5,38,1.32,2017/18,La Liga|Villarreal|2017/18
+La Liga,50,CD Alaves,23,27,20,30,7,6,7,5,38,1.32,2017/18,La Liga|CD Alaves|2017/18
+La Liga,50,Eibar,19,31,26,24,2,6,6,5,38,1.32,2017/18,La Liga|Eibar|2017/18
+La Liga,51,CD Leganes,19,32,24,27,4,10,9,5,38,1.34,2017/18,La Liga|CD Leganes|2017/18
+La Liga,58,Levante,28,30,24,34,7,8,4,6,38,1.53,2017/18,La Liga|Levante|2017/18
+La Liga,58,Sevilla,22,36,25,33,6,13,9,5,38,1.53,2017/18,La Liga|Sevilla|2017/18
+La Liga,59,Girona FC,22,37,25,34,11,14,7,4,38,1.55,2017/18,La Liga|Girona FC|2017/18
+La Liga,59,Real Sociedad,29,30,28,31,5,7,5,5,38,1.55,2017/18,La Liga|Real Sociedad|2017/18
+La Liga,60,Celta Vigo,23,37,30,30,10,14,5,2,38,1.58,2017/18,La Liga|Celta Vigo|2017/18
+La Liga,61,Malaga,27,34,23,38,10,7,4,2,38,1.61,2017/18,La Liga|Malaga|2017/18
+La Liga,61,Real Betis,31,30,25,36,6,11,6,7,38,1.61,2017/18,La Liga|Real Betis|2017/18
+La Liga,74,Las Palmas,38,36,25,49,7,11,3,2,38,1.95,2017/18,La Liga|Las Palmas|2017/18
+La Liga,76,Deportivo La Coruna,33,43,36,40,12,16,4,2,38,2,2017/18,La Liga|Deportivo La Coruna|2017/18
+French Ligue 1,29,Paris Saint-Germain,15,14,11,18,3,7,9,9,38,0.76,2017/18,French Ligue 1|Paris Saint-Germain|2017/18
+French Ligue 1,33,Montpellier HSC,19,14,17,16,4,6,5,9,38,0.87,2017/18,French Ligue 1|Montpellier HSC|2017/18
+French Ligue 1,41,FC Nantes,17,24,16,25,4,7,7,5,38,1.08,2017/18,French Ligue 1|FC Nantes|2017/18
+French Ligue 1,42,SC Amiens,19,23,17,25,4,10,6,5,38,1.11,2017/18,French Ligue 1|SC Amiens|2017/18
+French Ligue 1,43,Olympique Lyonnais,18,25,21,22,4,14,9,6,38,1.13,2017/18,French Ligue 1|Olympique Lyonnais|2017/18
+French Ligue 1,44,Stade Rennes,22,22,20,24,2,8,5,5,38,1.16,2017/18,French Ligue 1|Stade Rennes|2017/18
+French Ligue 1,45,AS Monaco,17,28,25,20,6,6,7,7,38,1.18,2017/18,French Ligue 1|AS Monaco|2017/18
+French Ligue 1,47,Olympique Marseille,19,28,25,22,13,4,8,6,38,1.24,2017/18,French Ligue 1|Olympique Marseille|2017/18
+French Ligue 1,48,Girondins De Bordeaux,23,25,21,27,7,10,4,6,38,1.26,2017/18,French Ligue 1|Girondins De Bordeaux|2017/18
+French Ligue 1,50,AS Saint-Etienne,27,23,26,24,9,9,5,8,38,1.32,2017/18,French Ligue 1|AS Saint-Etienne|2017/18
+French Ligue 1,52,OGC Nice,23,29,25,27,9,9,7,3,38,1.37,2017/18,French Ligue 1|OGC Nice|2017/18
+French Ligue 1,52,Caen,19,33,24,28,7,4,8,5,38,1.37,2017/18,French Ligue 1|Caen|2017/18
+French Ligue 1,52,Angers SCO,28,24,27,25,11,5,3,3,38,1.37,2017/18,French Ligue 1|Angers SCO|2017/18
+French Ligue 1,54,Toulouse,21,33,22,32,6,11,7,5,38,1.42,2017/18,French Ligue 1|Toulouse|2017/18
+French Ligue 1,59,En Avant Guingamp,24,35,22,37,7,14,7,4,38,1.55,2017/18,French Ligue 1|En Avant Guingamp|2017/18
+French Ligue 1,59,Troyes AC,22,37,20,39,7,13,7,1,38,1.55,2017/18,French Ligue 1|Troyes AC|2017/18
+French Ligue 1,67,RC Strasbourg,27,40,26,41,9,14,3,1,38,1.76,2017/18,French Ligue 1|RC Strasbourg|2017/18
+French Ligue 1,67,Lille OSC,27,40,36,31,12,13,3,2,38,1.76,2017/18,French Ligue 1|Lille OSC|2017/18
+French Ligue 1,73,Dijon FCO,28,45,31,42,10,11,3,2,38,1.92,2017/18,French Ligue 1|Dijon FCO|2017/18
+French Ligue 1,76,FC Metz,37,39,35,41,10,16,2,2,38,2,2017/18,French Ligue 1|FC Metz|2017/18
+Eredivisie,33,AFC Ajax,12,21,16,17,4,5,7,5,34,0.97,2017/18,Eredivisie|AFC Ajax|2017/18
+Eredivisie,38,AZ Alkmaar,23,15,16,22,3,5,6,7,34,1.12,2017/18,Eredivisie|AZ Alkmaar|2017/18
+Eredivisie,39,PSV Eindhoven,9,30,15,24,3,4,12,2,34,1.15,2017/18,Eredivisie|PSV Eindhoven|2017/18
+Eredivisie,39,Feyenoord,17,22,14,25,1,11,6,4,34,1.15,2017/18,Eredivisie|Feyenoord|2017/18
+Eredivisie,47,Vitesse Arnhem,20,27,19,28,7,6,6,3,34,1.38,2017/18,Eredivisie|Vitesse Arnhem|2017/18
+Eredivisie,50,FC Groningen,21,29,22,28,8,8,5,2,34,1.47,2017/18,Eredivisie|FC Groningen|2017/18
+Eredivisie,53,SC Heerenveen,24,29,26,27,7,14,5,3,34,1.56,2017/18,Eredivisie|SC Heerenveen|2017/18
+Eredivisie,53,FC Utrecht,21,32,24,29,7,11,5,2,34,1.56,2017/18,Eredivisie|FC Utrecht|2017/18
+Eredivisie,53,ADO Den Haag,27,26,26,27,12,11,3,4,34,1.56,2017/18,Eredivisie|ADO Den Haag|2017/18
+Eredivisie,54,VVV Venlo,29,25,17,37,2,9,4,4,34,1.59,2017/18,Eredivisie|VVV Venlo|2017/18
+Eredivisie,54,PEC Zwolle,20,34,24,30,9,6,4,3,34,1.59,2017/18,Eredivisie|PEC Zwolle|2017/18
+Eredivisie,56,SBV Excelsior,24,32,27,29,8,5,4,2,34,1.65,2017/18,Eredivisie|SBV Excelsior|2017/18
+Eredivisie,57,NAC Breda,31,26,25,32,6,9,2,4,34,1.68,2017/18,Eredivisie|NAC Breda|2017/18
+Eredivisie,63,Willem II Tilburg,29,34,30,33,8,12,3,2,34,1.85,2017/18,Eredivisie|Willem II Tilburg|2017/18
+Eredivisie,63,FC Twente,31,32,24,39,5,11,3,2,34,1.85,2017/18,Eredivisie|FC Twente|2017/18
+Eredivisie,64,Heracles Almelo,25,39,29,35,8,14,2,2,34,1.88,2017/18,Eredivisie|Heracles Almelo|2017/18
+Eredivisie,69,Roda JC Kerkrade,34,35,33,36,15,11,1,2,34,2.03,2017/18,Eredivisie|Roda JC Kerkrade|2017/18
+Eredivisie,75,Sparta Rotterdam,36,39,28,47,11,14,3,1,34,2.21,2017/18,Eredivisie|Sparta Rotterdam|2017/18
+Serie A,24,Juventus,8,16,9,15,3,1,12,10,38,0.63,2017/18,Serie A|Juventus|2017/18
+Serie A,28,AS Roma,19,9,12,16,5,6,6,12,38,0.74,2017/18,Serie A|AS Roma|2017/18
+Serie A,29,Napoli,18,11,15,14,8,5,7,12,38,0.76,2017/18,Serie A|Napoli|2017/18
+Serie A,30,Internazionale,16,14,13,17,4,7,10,7,38,0.79,2017/18,Serie A|Internazionale|2017/18
+Serie A,39,Atalanta,18,21,17,22,3,5,6,5,38,1.03,2017/18,Serie A|Atalanta|2017/18
+Serie A,42,AC Milan,16,26,16,26,2,6,7,5,38,1.11,2017/18,Serie A|AC Milan|2017/18
+Serie A,43,Genoa,27,16,14,29,4,7,4,8,38,1.13,2017/18,Serie A|Genoa|2017/18
+Serie A,46,Fiorentina,22,24,22,24,4,4,8,6,38,1.21,2017/18,Serie A|Fiorentina|2017/18
+Serie A,46,Torino,18,28,19,27,6,7,6,4,38,1.21,2017/18,Serie A|Torino|2017/18
+Serie A,49,SS Lazio,21,28,20,29,5,5,7,4,38,1.29,2017/18,Serie A|SS Lazio|2017/18
+Serie A,52,Bologna,26,26,24,28,5,7,4,4,38,1.37,2017/18,Serie A|Bologna|2017/18
+Serie A,59,SPAL,29,30,25,34,10,10,5,2,38,1.55,2017/18,Serie A|SPAL|2017/18
+Serie A,59,Sassuolo,22,37,29,30,5,13,6,4,38,1.55,2017/18,Serie A|Sassuolo|2017/18
+Serie A,59,Chievo,24,35,25,34,8,16,4,3,38,1.55,2017/18,Serie A|Chievo|2017/18
+Serie A,60,Sampdoria,20,40,26,34,8,15,6,3,38,1.58,2017/18,Serie A|Sampdoria|2017/18
+Serie A,61,Cagliari,30,31,27,34,11,13,4,4,38,1.61,2017/18,Serie A|Cagliari|2017/18
+Serie A,63,Udinese,30,33,33,30,9,9,5,4,38,1.66,2017/18,Serie A|Udinese|2017/18
+Serie A,66,FC Crotone,25,41,35,31,9,9,4,1,38,1.74,2017/18,Serie A|FC Crotone|2017/18
+Serie A,78,Hellas Verona,35,43,34,44,10,11,5,2,38,2.05,2017/18,Serie A|Hellas Verona|2017/18
+Serie A,84,Benevento,40,44,34,50,9,15,3,1,38,2.21,2017/18,Serie A|Benevento|2017/18
+Scottish Premiership,25,Celtic,9,16,10,15,1,2,11,9,38,0.66,2017/18,Scottish Premiership|Celtic|2017/18
+Scottish Premiership,37,Aberdeen,16,21,17,20,7,4,8,9,38,0.97,2017/18,Scottish Premiership|Aberdeen|2017/18
+Scottish Premiership,39,Heart of Midlothian,13,26,20,19,4,7,10,5,38,1.03,2017/18,Scottish Premiership|Heart of Midlothian|2017/18
+Scottish Premiership,46,Hibernian,27,19,21,25,8,7,4,7,38,1.21,2017/18,Scottish Premiership|Hibernian|2017/18
+Scottish Premiership,47,Kilmarnock,26,21,24,23,9,9,5,6,38,1.24,2017/18,Scottish Premiership|Kilmarnock|2017/18
+Scottish Premiership,49,Motherwell,22,27,25,24,5,6,7,6,38,1.29,2017/18,Scottish Premiership|Motherwell|2017/18
+Scottish Premiership,50,Rangers,20,30,22,28,10,8,8,3,38,1.32,2017/18,Scottish Premiership|Rangers|2017/18
+Scottish Premiership,53,St Johnstone,27,26,23,30,11,10,6,3,38,1.39,2017/18,Scottish Premiership|St Johnstone|2017/18
+Scottish Premiership,57,Dundee,27,30,22,35,7,10,3,4,38,1.5,2017/18,Scottish Premiership|Dundee|2017/18
+Scottish Premiership,61,Partick Thistle,24,37,28,33,6,7,4,2,38,1.61,2017/18,Scottish Premiership|Partick Thistle|2017/18
+Scottish Premiership,62,Ross County,29,33,24,38,4,10,2,3,38,1.63,2017/18,Scottish Premiership|Ross County|2017/18
+Scottish Premiership,68,Hamilton Academical,35,33,32,36,9,11,4,1,38,1.79,2017/18,Scottish Premiership|Hamilton Academical|2017/18

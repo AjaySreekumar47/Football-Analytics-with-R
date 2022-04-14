@@ -1,0 +1,810 @@
+---
+title: "Google Capstone Project"
+output: html_document
+date: '2022-04-11'
+---
+
+## Table of Contents
+
+#### 1. [Introduction]
+
+#### 2. [Ask]
+
+#####  Guiding questions
+
+#####  Key tasks
+
+#####  Deliverable
+
+#### 3. [Prepare]:
+
+#####  Guiding questions
+
+#####  Key tasks
+
+#####  Deliverable
+
+#### 4. [Process]
+
+#####  Code
+
+#####  Dependences
+
+#####  Concatenating
+
+#####  Data cleaning
+
+#####  Manipulating the data
+
+#####  Saving the result as a CSV
+
+#####  Guiding questions
+
+#####  Key tasks
+
+#####  Deliverable
+
+#### 5. [Analyze]
+
+#####  Code
+
+#####  Data distribution
+
+#####  Other variables
+
+#####  Guiding questions
+
+#####  Key tasks
+
+#####  Deliverable
+
+#### 6. [Share]
+
+#####  Guiding questions
+
+#####  Key tasks
+
+#####  Deliverable
+
+#### 7. [Act]
+
+#####  Guiding questions
+
+#####  Key tasks
+
+#####  Deliverable
+
+#### 8. [Conclusion]
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction 
+
+This project was created as a part of the Google Data Analytics Capstone Project - Case Study 3. Since this is not an existing case study - I have created this case study as an exercise to be done with some real datasets of Premier League footballers and teams in the season 2017/2018.
+
+A short summary of what this project will attempt to do is to let the stakeholders know the top 10 and the bottom 10 players in their positions in the Premier league season of 2017/18.
+
+The datasets used for this project can be found from Kaggle - links will be provided in the below sections.
+
+## Ask
+
+You are a junior data analyst working in the football analytics team at "The Athletic", a sports journalism company in Chicago. The director of scouting wants the company to beat out rival journalists by using cutting edge scouting metrics and networks to publish a list of players who were the best/worst players of their teams based on real-time datasets captured for the year 2017-18. Therefore, your team wants to understand and capture the various metrics captured for the particular season to draw important insights. From these insights, your team will be able to relate the information to journalists who can articulate the same on the website. But first, they must approve your recommendations, so the data must be backed up with compelling insights and professional visualizations.
+
+#### Guiding Questions:
+
+* What is the problem you are trying to solve?
+
+Find the best and worst players in the PL of a particular position based on performances for the year 2017/18.
+
+* How can your insights drive business decisions?
+
+This data will help make the stakeholders make a decision to crown a set of players as the best in their position in a particular year of the premier league based on statistics.
+
+#### Key Tasks:
+
+[x] Identify the business task
+
+[x] Consider key stakeholders
+
+#### Deliverable:
+
+Find the best and worst players in the Premier league for the teams they played for the 2017-18 season - all on the basis of statistics.
+
+## Prepare
+
+The datasets used for this project are:
+
+* [Dataset-1](https://www.kaggle.com/code/ritesaluja/premier-league-eda/data)
+
+* [Dataset-2](https://www.kaggle.com/code/pcharambira/premier-league-analysis/data)
+
+#### Guiding Questions:
+
+* Where is your data located?
+
+The data is located in the Kaggle website.
+
+* How is the data organized?
+
+The data covers each player's overall statistics over the course of a 38-game season in 2017-18 and a team's overall performance in the same season.
+
+* How does it help you answer your question?
+
+The data may have some key insights about players' performance and their overall impact on their team's fortunes over the entire season.
+
+* Potential data issues?
+
+Since the data is obtained by a third party - as well as has information about a season 5 years ago, it is not relevant as of today - and is only being pursued for a journalistic piece.
+
+#### Key tasks
+
+[x] Download data and store it appropriately.
+
+[x] Identify how it’s organized.
+
+[x] Sort and filter the data.
+
+[x] Determine the credibility of the data.
+
+#### Deliverable
+
+[x] A description of all data sources used
+
+The main data sources are:
+
+1. The PL players' dataset - which tracks on-the-ball as well as off-the-ball performances of all PL players over the course of the season.
+
+2. The PL Team performances dataset - which tracks a team's overall performance over the same season as team statistics.
+
+## Process
+
+This step will prepare the data for analysis.
+
+#### Code
+
+This project will import the "tidyverse" package for its analysis.
+
+```{r}
+library(tidyverse)
+library(readr)
+```
+
+Checking the data present in the dataset uploaded.
+
+```{r}
+Players_stats <- read_csv("Stats.csv")
+Team_Defense_2017_18 <- read_csv("Team Defense 2017-18.csv")
+PL_Defense_stats <- Team_Defense_2017_18 %>% filter(League=="Premier League")
+
+head(Players_stats)
+
+Players_stats_2 <- read_csv("Stats3.csv")
+
+head(Players_stats_2)
+```
+
+#### Removing Duplicates
+
+Since the column names are not formatted correctly and have spaces in them preventing analysis, we will need to format them according to correct conventions for R.
+
+```{r}
+colnames(PL_Defense_stats) <- c("League","Goals.Against","Team","GA.Home","GA.Away","GA.First.Half","GA.Second.Half","GA.First.15.mins","GA.Last.10.mins","GA.Home.Matches.Scored.In","GA.Away.Matches.Scored.In","GA.Pld","GA.Per.Match","Season","KEY")
+
+Stats1_clean <- Players_stats[!duplicated(Players_stats$`Player Name`), ]
+print(paste("Removed", nrow(Players_stats) - nrow(Stats1_clean),"duplicated rows"))
+
+Stats2_clean <- Players_stats_2[!duplicated(Players_stats_2$Player), ]
+print(paste("Removed", nrow(Players_stats_2) - nrow(Stats2_clean),"duplicated rows"))
+```
+
+#### Saving the results as CSV files
+
+We will save the clean files into CSV format. As part of this data cleaning, we will ensure that all column names are of the correct format, both in names as well as data types.
+
+```{r}
+Stats1_clean %>% write.csv("Stats1_clean.csv")
+
+Stats2_clean %>% write.csv("Stats2_clean.csv")
+
+colnames(Stats1_clean) <- c("Player.Name","Accurate.Long.Balls","Aerial.Battles.Lost","Aerial.Battles.Won","Appearances","Assists","Attack","Big.Chances.Created","Big.Chances.Missed","Blocked.Shots","Catches","Clean.Sheets","Clearances","Clearances.Off.Line","Club","Cross.Accuracy.prc","Crosses","Defence","Discipline","Duels.Lost","Duels.Won","Errors.Leading.To.Goal","Fouls","Goal.Kicks","Goalkeeping","Goals","Goals.Conceded","Goals.From.Freekick","Goals.Per.Match","Goals.With.Header","Goals.With.Left.Foot","Goals.With.Right.Foot","Headed.Clearance","High.Claims","Hit.Woodwork","Interceptions","Last.Man.Tackles","Losses","Offsides","Own.Goals","Passes","Passes.Per.Match","Penalties.Saved","Penalties.Scored","Position","Punches","Recoveries","Red.Cards","Saves","Shooting.Accuracy.prc","Shots","Shots.On.Target","Successful.Challenges","Sweeper.Clearances", "Tackle.Success.prc","Tackles","Team.Play","Through.Balls","Throw.Outs","Wins","Yellow.Cards")
+
+colnames(Stats2_clean) <- c("League","Team","Season","KEY","Player","Position","Appearences","Goals","Started","Started.As.A.Sub","Came.On","Taken.Off","Own.Goals","Type.Of.Goal","First.Half","Second.Half","First.Scorer","Last.Scorer","Home","Away","Right.Foot","Left.Foot","Header","Other.Method","Open.Play","Cross","Free.Kick", "Direct.Free.Kick","Throw.In", "Penalty","Corner","Other.Type.Of.Play","Minutes.played","Min.goal","Assists", "Prc.Assists","Leading.Recipient","Recipient.Goals","CS","Prc.Clean.Sheets","Hat.Tricks","Yellow.Cards","Yellow.First.Half","Yellow.Second.Half","Yellow.Home","Yellow.Away","Yellow.Minutes.Played","Minutes.per.Yellow.Cards","Sent.Off","Straight.Red.Card","Two.Yellow.Cards","Red.First.Half","Red.Second.Half","Red.Home","Red.Away","Red.Minutes.Played","Minutes.per.Red.Cards")
+
+Stats2_clean$Yellow.Cards <- as.integer(Stats2_clean$Yellow.Cards)
+```
+
+
+#### Guiding Questions
+
+* What tools are you choosing and why?
+
+I'm using R for this project, for two main reasons: Because of the large dataset and to gather experience with the language.
+
+* Have you ensured your data’s integrity?
+
+Yes, the data is consistent throughout the columns.
+
+* What steps have you taken to ensure that your data is clean?
+
+First the duplicated values were removed, then the columns were checked if they were formatted correctly.
+
+* Have you documented your cleaning process so you can review and share those results?
+
+Yes, it's all documented in this R notebook.
+
+#### Key tasks
+
+[x] Check the data for errors.
+
+[x] Choose your tools.
+
+[x] Transform the data so you can work with it effectively
+
+[x] Document the cleaning process.
+
+## Analyze
+
+Finding out the best players in their positions will require the breakdown of the best performances in each position in the league. So, we will break down the analysis from the team perspective to the individual levels.
+
+#### Defence
+
+Let us look at the defensive statistics from the first 26 games of the 2019/20 season.
+
+1. Goals Conceded by each team.
+
+```{r}
+barplot(height = PL_Defense_stats$Goals.Against,names.arg = PL_Defense_stats$Team,main = "Amount Of Goals conceded by each team",ylab = "Goals Conceded",las=2,ylim = c(0,80))
+```
+
+
+
+2. Average Goals conceded each game.
+
+```{r}
+barplot(height = PL_Defense_stats$GA.Per.Match,names.arg = PL_Defense_stats$Team,main = "Goals Against Per Match",ylab = "GA Per Match",las=2,ylim = c(0,4))
+```
+
+
+
+3. Goals conceded in the last 10 minutes.
+
+```{r}
+barplot(height = PL_Defense_stats$GA.Last.10.mins,names.arg = PL_Defense_stats$Team,main = "Goals Conceded in the last 10 minutes",ylab = "Goals Conceded",las=2,ylim = c(0,25))
+```
+
+
+
+4. Goals conceded in the first 45 minutes.
+
+```{r}
+barplot(height = PL_Defense_stats$GA.First.Half,names.arg = PL_Defense_stats$Team,main = "Goals Conceded in the first half",ylab = "Goals Conceded",las=2,ylim = c(0,40))
+```
+
+
+
+5. Goals conceded at Home.
+
+```{r}
+barplot(height = PL_Defense_stats$GA.Home,names.arg = PL_Defense_stats$Team,main = "Goals Conceded at Home",ylab = "Goals Conceded",las=2,ylim = c(0,40))
+```
+
+
+
+6. Goals conceded away from Home.
+
+```{r}
+barplot(height = PL_Defense_stats$GA.Away,names.arg = PL_Defense_stats$Team,main = "Goals Conceded away from Home",ylab = "Goals Conceded",las=2,ylim = c(0,60))
+```
+
+
+
+7. Clean sheets
+
+```{r}
+team_goalkeeper_df <- Stats2_clean %>% 
+  filter(Position=="Goalkeeper") %>% 
+  group_by(Team) %>% 
+  drop_na(CS) %>% 
+  summarize(total_CS = sum(CS))
+
+barplot(height = team_goalkeeper_df$total_CS,names.arg = team_goalkeeper_df$Team,main = "Clean sheets Kept",ylab = "Clean Sheets Kept",las=2,ylim = c(0,25))
+```
+
+
+8. Disciplinary statistics from Defenders
+
+Let us check the records for the teams having the most players getting booked and sent off.
+
+8.1. Yellow Cards Awarded:
+
+```{r}
+discipline_df <- Stats2_clean %>% 
+  filter(Position=="Defender") %>% 
+  group_by(Team) %>%
+  drop_na(Yellow.Cards) %>%
+  summarise(total_yellows = sum(Yellow.Cards))
+
+barplot(height = discipline_df$total_yellows,names.arg = discipline_df$Team,main = "Yellow Cards Received",ylab = "Cards",las=2,col = "yellow",ylim = c(0,35))
+```
+
+
+8.2. Red Cards Awarded (1 Match Bans):
+
+```{r}
+discipline_df2 <- Stats2_clean %>% 
+  filter(Position=="Defender") %>% 
+  group_by(Team) %>%
+  drop_na(Sent.Off) %>%
+  summarise(total_reds = sum(Sent.Off))
+
+
+barplot(height = discipline_df2$total_reds,col = "red",names.arg = discipline_df2$Team,main = "Red Cards Received",ylab = "Cards",las=2,ylim = c(0,5))
+```
+
+
+9. Overall Goalkeeping Metrics Analysis:
+
+9.1. The Top 10 Goalkeepers in the Premier League for 2017-18.
+
+Here, based on the statistics we have collected for every 'keeper in our dataset - a simple formula is used to calculate the overall contribution of a goalkeeper to his team in order to get the 3 points over the course of the entire season.
+
+
+```{r }
+goalkeeper_df <- Stats1_clean %>% 
+  filter(Position=="Goalkeeper")
+
+gks_scored <- mutate(goalkeeper_df, ovr_score = 0 - (1*Errors.Leading.To.Goal) + (2.5*Assists) - (3*Red.Cards) + (3*Penalties.Saved) - (0.9*Fouls) + (0.2*Appearances) - (1*Own.Goals) + (0.8*Blocked.Shots) - (1*Goals.Conceded) + (2.5*Accurate.Long.Balls) + (2*Saves)) 
+
+top_10_gks <- head(gks_scored[order(-gks_scored$ovr_score),],n=10)
+
+gk_plt <- top_10_gks %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Top 10 Goalkeepers of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3) 
+  
+gk_plt + theme(axis.text.x = element_blank(),
+               axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+
+9.2. The Bottom 10 Goalkeepers of the Premier League 2017-18 season
+
+```{r }
+gks_scored <- gks_scored %>% 
+  filter(ovr_score!=0.0) %>% 
+  arrange(ovr_score)
+
+bottom_10_gks <- head(gks_scored[order(gks_scored$ovr_score),],n=10)
+
+bot_gk_plt <- bottom_10_gks %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Bottom 10 Goalkeepers of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3) 
+
+bot_gk_plt + theme(axis.text.x = element_blank(),
+               axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+10. Overall Defending Metrics Analysis:
+
+10.1. The top 10 Defenders of the 2017/18 season
+
+```{r}
+defender_df <- Stats1_clean %>% 
+  filter(Position=="Defender")
+
+def_scored <- mutate(defender_df, ovr_score = 0 + (1.5*Goals) - (2*Errors.Leading.To.Goal) + (0.9*Shots.On.Target) + (1*Assists) + (0.5*Tackles) - (2*Red.Cards) - (0.9*Fouls) + (0.8*Goals.With.Header) - (0.8*Own.Goals) + (0.8*Blocked.Shots) + (0.5*Passes.Per.Match)) 
+
+top_10_def <- head(def_scored[order(-def_scored$ovr_score),],n=10)
+
+def_plt <- top_10_def %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Top 10 Defenders of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3)
+
+def_plt + theme(axis.text.x = element_blank(),
+               axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+
+10.2. The Bottom 10 Defenders of the 2017/18 season
+
+```{r}
+def_scored <- def_scored %>% 
+  filter(ovr_score!=0.0) %>% 
+  arrange(ovr_score)
+
+bot_10_def <- head(def_scored[order(def_scored$ovr_score),],n=10)
+
+bot_def_plt <- bot_10_def %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Bottom 10 Defenders of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3)
+
+bot_def_plt + theme(axis.text.x = element_blank(),
+                axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+11. Overall Midfield Metrics Analysis:
+
+11.1. The top 10 Midfielders of the 2017/18 season
+
+```{r}
+mid_df <- Stats1_clean %>% 
+  filter(Position=="Midfielder")  
+
+mid_scored <- mutate(mid_df, ovr_score = 0 + (0.5*Shooting.Accuracy.prc) + (0.8*Goals) + (0.9*Shots.On.Target) + (0.9*Assists) + (0.9*Tackle.Success.prc) - (1*Red.Cards) + (0.8*Penalties.Scored) - (0.9*Fouls) + (0.5*Goals.With.Header) - (0.8*Own.Goals) + (0.5*Goals.From.Freekick) + (1.0*Passes.Per.Match))
+
+top_10_mid <- head(mid_scored[order(-mid_scored$ovr_score),],n=10)
+
+mid_plt <- top_10_mid %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Top 10 Midfielders of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3) 
+
+mid_plt + theme(axis.text.x = element_blank(),
+                axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+11.2. The Bottom 10 Midfielders of the 2017/18 season
+
+```{r}
+mid_scored <- mid_scored %>% 
+  filter(ovr_score!=0.0) %>% 
+  arrange(ovr_score)
+
+bot_10_mid <- head(mid_scored[order(mid_scored$ovr_score),],n=10)
+
+bot_mid_plt <- bot_10_mid %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Bottom 10 Midfielders of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3) 
+
+bot_mid_plt + theme(axis.text.x = element_blank(),
+                    axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+12. Overall Attacking Metrics Analysis:
+
+12.1. The top 10 Forwards of the 2017/18 season
+
+```{r}
+att_df <- Stats1_clean %>% 
+  filter(Position=="Forward")  
+
+att_df[is.na(att_df)] <- 0
+
+att_scored <- mutate(att_df, ovr_score = 0 + (0.8*Shooting.Accuracy.prc) + (1*Goals) + (0.9*Shots.On.Target) + (0.5*Assists) + (0.5*Tackle.Success.prc) - (1*Red.Cards) + (0.8*Penalties.Scored) - (0.9*Fouls) + (0.8*Goals.With.Header) - (0.8*Own.Goals) + (0.8*Goals.From.Freekick) + (0.5*Passes.Per.Match) + (0.8*Cross.Accuracy.prc))
+
+top_10_att <- head(att_scored[order(-att_scored$ovr_score),],n=10)
+
+att_plt <- top_10_att %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Top 10 Forwards of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3)
+
+att_plt + theme(axis.text.x = element_blank(),
+                axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+12.2. The bottom 10 Forwards of the 2017/18 season
+
+```{r}
+att_scored <- att_scored %>% 
+  filter(ovr_score!=0.0) %>% 
+  arrange(ovr_score)
+
+bot_10_att <- head(att_scored[order(att_scored$ovr_score),],n=10)
+
+bot_att_plt <- bot_10_att %>%
+  ggplot(aes(x=Player.Name, y=ovr_score))+ geom_point(aes(color=Player.Name))+
+  scale_x_discrete(guide = guide_axis(n.dodge=3))+
+  labs(title="Bottom 10 Forwards of 2017/18") +
+  geom_text(aes(label=Player.Name),size=3) 
+
+bot_att_plt + theme(axis.text.x = element_blank(),
+                    axis.ticks.x = element_blank()) +
+  ylab("Overall Score") + xlab("Player Name")
+```
+
+#### Guiding Questions
+
+* How should you organize your data to perform analysis on it?
+
+Since there were multiple sources of data - we organized the same into 2 datasets upon which the analysis operations were conducted.
+
+* What trends or relationships did you find in the data?
+
+We found the top 10 and bottom 10 players at their respective positions in the league based on contributions to their teams' overall results for the season 2017/18. 
+  
+#### Key Tasks
+
+* [x] Aggregate your data so it’s useful and accessible.
+
+* [x] Organize and format your data.
+
+* [x] Perform calculations.
+
+* [x] Identify trends and relationships.
+
+#### Deliverable
+
+* [x] A summary of your analysis
+
+## Share
+
+Based on statistics analyzed and visualizations created, we can summarize that:
+
+1. Manchester City have the most miserly defence in the league.
+
+2. The 'Big Six' clubs aside from Arsenal all have the lowest Goals Against conceded per match.
+
+3. Surprisingly, Burnley's defence is also high in this list.
+
+4. Teams like Watford, Everton, West Ham United, Bournemouth and Spurs have a worrying trend of plentiful goal concessions in the last 10 minutes. This may be due to the lack of fitness in the defenders inducing mistakes in the first third of the pitch for these teams.
+
+5. Burnley continue a surprising trend of being amongst the very best defensive teams in the first half - conceding the least amount of goals akin to Manchester City.
+
+6. Liverpool and Manchester United both seemingly have the 'Home' territory factor on lock as they concede the least amount of goals at Anfield and Old Trafford respectively.
+
+7. West Ham United and Leicester City (the defending champions from 2 years ago) are the worst defences that a team can face at home since they are the most prone to conceding away from theirs.
+
+8. The best defences in the league are Manchester United, Manchester City, Liverpool, Chelsea and Spurs evidenced by the fact that they have the most clean sheets in the league (in that order of teams).
+
+9. West Ham, Crystal Palace, Huddersfield Town are the most ill-disciplined team in the league - since they have received the most number of cautionary cards in the league.
+
+10. In cases of abysmal body-line tackling and reckless behaviour that may or may not lead to the endangerment of the opposition - Chelsea, Southampton and Spurs have been found guilty of multiple red cards awarded. This is a bit surprising as they are not amongst the most booked side in the league.
+
+#### Findings from our Analysis:
+
+1. Goalkeepers:
+
+1.1. Top 10:
+
+  1. Petr Cech (Arsenal)
+  
+  2. Joe Hart (Manchester City)
+  
+  3. Asmir Begovic (Stoke City)
+  
+  4. David De Gea (Manchester United)
+  
+  5. Simon Mignolet (Liverpool)
+  
+  6. Wayne Henessey (Crystal Palace)
+  
+  7. Tim Krul (Newcastle United)
+  
+  8. Hugo Lloris (Tottenham Hotspurs)
+  
+  9. Kasper Schmeichel (Leicester City)
+  
+  10. Adrian (West Ham United)
+  
+
+1.2. Bottom 10:
+
+  1. Ederson (Manchester City) 
+  
+  2. Nick Pope (Burnley)
+  
+  3. Matt Ryan (Brighton and Hove Albion)
+  
+  4. Loris Karius (Liverpool)
+  
+  5. Sergio Romero (Manchester United)
+  
+  6. Karl Darlow (Newcastle United)
+  
+  7. Stuart Taylor (Southampton)
+  
+  8. Ben Hamer (Leicester City)
+  
+  9. Claudio Bravo (Manchester City)
+  
+  10. Willy Caballero (Chelsea)
+  
+  
+2. Defenders:
+
+2.1. Top 10:
+
+  1. Leighton Baines (Everton)
+  
+  2. James Milner (Liverpool)
+  
+  3. Phil Jagielka (Everton)
+  
+  4. Pablo Zabaleta (Manchester City)
+  
+  5. Nathaniel Clyne (Liverpool)
+  
+  6. Antonio Valencia (Manchester United)
+  
+  7. Cesar Azpilicueta (Chelsea)
+  
+  8. Phil Bardsley (Burnley)
+  
+  9. Seamus Coleman (Everton)
+  
+  10. Kyle Walker (Manchester City)
+  
+  
+2.2. Bottom 10:
+
+  1. Sebastian Prodl (Watford)
+  
+  2. Miguel Britos (Watford)
+  
+  3. Yohan Benalouane (Leicester City)
+  
+  4. Jamie Sterry (Newcastle United)
+  
+  5. Baily Cargill (AFC Bournemouth)
+  
+  6. Sam Byram (West Ham United)
+  
+  7. Jake Clarke-Salter (Chelsea)
+  
+  8. Elaquim Mangala (Manchester City)
+  
+  9. Davide Zappacosta (Chelsea)
+  
+  10. Florian Lejeune (Newcastle United)
+  
+  
+3. Midfielders:
+
+3.1. Top 10:
+
+  1. Christian Eriksen (Tottenham Hotspurs)
+  
+  2. Eden Hazard (Chelsea)
+  
+  3. Santiago Cazorla (Arsenal)
+  
+  4. Philippe Coutinho (Liverpool)
+  
+  5. Gylfi Sigurdsson (Everton)
+  
+  6. Mesut Ozil (Arsenal)
+  
+  7. Juan Mata (Manchester United)
+  
+  8. Cesc Fabregas (Chelsea)
+  
+  9. David Silva (Manchester City)
+  
+  10. Riyad Mahrez (Leicester City)
+  
+  
+3.2. Bottom 10:
+
+  1. Marouane Fellaini (Manchester United)
+  
+  2. Steve Sidwell (Fulham)
+  
+  3. Glenn Whelan (Stoke City)
+  
+  4. Mousa Dembele' (Tottenham Hotspurs)
+  
+  5. Mohamed Diame' (West Ham United)
+  
+  6. James McCarthy (Everton)
+  
+  7. Victor Wanyama (Tottenham Hotspurs)
+  
+  8. Morgan Schneiderlin (Everton)
+  
+  9. Jack Colback (Newcastle United)
+  
+  10. James McArther (Crystal Palace)
+  
+  
+4. Forwards:
+
+4.1. Top 10:
+
+  1. Wayne Rooney (Manchester United)
+  
+  2. Sergio Aguero (Manchester City)
+  
+  3. Jermain Defoe (AFC Bournemouth)
+  
+  4. Daniel Sturridge (Liverpool)
+  
+  5. Romelu Lukaku (Manchester United)
+  
+  6. Theo Walcott (Arsenal)
+  
+  7. Harry Kane (Totteham Hotspurs)
+  
+  8. Alexis Sanchez (Arsenal)
+  
+  9. Olivier Giroud (Arsenal)
+  
+  10. Danny Welbeck (Arsenal)
+  
+  
+4.2. Bottom 10:
+
+  1. Ashley Barnes (Burnley)
+  
+  2. Connor Wickham (Crystal Palace)
+  
+  3. Marko Arnautovic (Stoke City)
+  
+  4. Yannick Bolasie (Crystal Palace)
+  
+  5. Leonardo Ulloa (Leicester City)
+  
+  6. Jose Izquierdo (Brighton and Hove Albion)
+  
+  7. Isaiah Brown (Brighton and Hove Albion)
+  
+  8. Nikola Vlasic (Everton)
+  
+  9. Levi Lumeka (Crystal Palace)
+  
+  10. Shinji Okazaki (Leicester City)
+  
+  
+#### Guiding Questions
+
+* What story does your data tell?
+
+The analysis of the datasets in question brought out several statistics about defensive, offensive and disciplinary performances of about 500 players in the Premier league for the season 2017-18. We were able to find patterns in the records of all 20 teams in these departments - and hence derive a formula to make use of said statistics to evaluate a player's overall score for the season. The same brought out the conclusions presented before.
+
+* Can data visualization help you share your findings?
+
+Yes, All relevant statistics and findings have been shared via data visualization.
+
+#### Key tasks
+
+* [x] Determine the best way to share your findings.
+
+* [x] Create effective data visualizations.
+
+* [x] Present your findings.
+
+* [x] Ensure your work is accessible.
+
+#### Deliverable
+
+* [x] Supporting visualizations and key findings
+
+## Act
+
+The journalists perusing the data analysis will be the ones acting on it - to publish the relevant article. 
+
+#### Guiding Questions
+
+* What next steps would you or your stakeholders take based on your findings?
+
+Since this was a basic analysis to understand a player's impact based on certain metrics - one can delve even deeper in this analysis for several other unique metrics which can help deliver greater insights.
+
+* Is there additional data you could use to expand on your findings?
+
+Data like distance covered, runs made, defensive actions and several off-the-ball statistics can be used for more analysis.
+
+## Conclusion
+
+This was my first ever analytical notebook created via R software in the field of sports analytics. Since football is an area of interest for me, the time spent on creating this notebook was both enriching as well as very thought-provoking.
